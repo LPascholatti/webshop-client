@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function SignUp(props) {
   const { onSubmit, onChange, values } = props;
+  console.log("VALUES", values)
 
   return (
     <div className="login-form">

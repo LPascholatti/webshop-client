@@ -30,10 +30,10 @@ function jwt(data) {
   }
 }
 
-function newUser(email, password) {
+function newUser(data) {
   return {
     type: NEW_USER,
-    payload: (email, password)
+    payload: data
   }
 }
 

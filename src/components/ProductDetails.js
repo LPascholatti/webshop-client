@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function ProductDetails(props) {
   console.log('props.event', props.product)
@@ -25,6 +26,10 @@ export default function ProductDetails(props) {
         <p> Seller Address: {sellerAddress}</p>
         <p> Product's ID:{" " + id}</p>
       </p>
+      <button><Link to={'/'}>Return</Link></button>
+      <br />
+      <br />
+      <br />
     </div>
   )
 }

@@ -42,3 +42,9 @@ ul {
   font-weight: bold;
   font-size: 2rem;
 }
+
+.create-product-form {
+  padding: 3rem;
+  margin: 2rem;
+  border: solid;
+}

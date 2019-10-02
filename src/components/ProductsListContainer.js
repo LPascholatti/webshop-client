@@ -17,4 +17,6 @@ const mapStateToProps = state => ({
   products: state.products
 })
 
-export default connect(mapStateToProps, {loadProducts})(ProductsListContainer)
+const mapDispatchToProps = { loadProducts }
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsListContainer)

@@ -3,9 +3,12 @@ import './App.css';
 import { Route } from 'react-router-dom'
 // import Home from './components/home'
 import ProductsListContainer from './components/ProductsListContainer'
+import { Provider } from 'react-redux'
+import store from './store'
 
 function App() {
   return (
+    <Provider store={store}>
     <div className="App">
       <header className="App-header">
         <h1> Buy and Sell App</h1>
@@ -15,6 +18,7 @@ function App() {
       <Route path="/" exact component={ProductsListContainer} />
       </main>
     </div>
+    </Provider>
   );
 }
 

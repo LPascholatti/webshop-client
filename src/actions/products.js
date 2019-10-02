@@ -1,6 +1,7 @@
 import request from 'superagent'
 
 export const PRODUCTS_FETCHED = 'PRODUCTS_FETCHED'
+export const PRODUCT_FETCHED = 'PRODUCT_FETCHED'
 export const NEW_PRODUCT = 'NEW_PRODUCT'
 export const JWT = 'JWT'
 
@@ -8,6 +9,11 @@ const baseUrl = 'http://localhost:4000'
 
 const productsFetched = payload => ({
   type: PRODUCTS_FETCHED,
+  payload
+})
+
+const productFetched = payload => ({
+  type: PRODUCT_FETCHED,
   payload
 })
 
@@ -37,6 +43,14 @@ export const loadProducts = () => (dispatch, getState) => {
       })
       .catch(console.error)
   }
+}
+
+export const loadProduct = (id) => (dispatch) => {
+  request(`${baseUrl}/products/${id}`)
+    .then(response => {
+      dispatch(productFetched(response.body))
+      // .catch(console.error)
+    })
 }
 
 export const createProduct = data => (dispatch , getState) => {

@@ -1,20 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import ProductDetails from './ProductDetails'
-import { loadProducts } from '../actions/products'
+import { loadProduct } from '../actions/products'
 
 class ProductDetailsContainer extends React.Component {
   componentDidMount() {
-    this.props.loadProducts(Number(this.props.match.params.id))
+    this.props.loadProduct(Number(this.props.match.params.id))
   }
 
   render() {
-    return <ProductDetails products={this.props.products} />
+    return <ProductDetails product={this.props.product} />
   }
 }
 
 const mapStateToProps = state => ({
-  products: state.products
+  product: state.product
 })
 
-export default connect(mapStateToProps, {loadProducts})(ProductDetailsContainer)
+export default connect(mapStateToProps, {loadProduct})(ProductDetailsContainer)

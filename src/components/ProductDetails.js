@@ -1,9 +1,10 @@
 import React from 'react'
 
 export default function ProductDetails(props) {
-  console.log('props.event', props.products)
+  console.log('props.event', props.product)
 
-  const { name, id, description, email, sellerAddress, price, imageURL  } = props.products;
+  const { name, id, description, email, sellerAddress, price, imageURL } = props.product;
+  console.log("props.product", props.product)
 
   return (
     <div className="productDetails">
@@ -13,9 +14,9 @@ export default function ProductDetails(props) {
       <p>
         {!description && "Loading..."}
         {description}
-        <br/>
-        <img alt={name} src={imageURL}/>
-        <br/>
+        <br />
+        <img alt={name} src={imageURL} />
+        <br />
         By seller:
         {email + " " + sellerAddress}
         <p>

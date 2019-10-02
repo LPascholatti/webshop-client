@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-//import { Link } from 'react-router-dom'
+import CreateProductContainer from './CreateProductContainer'
 
 export default class ProductList extends Component {
 
@@ -37,6 +37,7 @@ export default class ProductList extends Component {
             <ul>{products.map(this.renderProducts)} </ul>
           }
         </div>
+        <CreateProductContainer />
       </div>
     )
   }

@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Route } from 'react-router-dom'
+// import Home from './components/home'
+import ProductsListContainer from './components/ProductsListContainer'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1> Buy and Sell App</h1>
+        <img alt='logo' src='https://d1ic4altzx8ueg.cloudfront.net/finder-us/wp-uploads/2018/01/shutter.jpg' />
       </header>
+      <main>
+      <Route path="/" exact component={ProductsListContainer} />
+      </main>
     </div>
   );
 }

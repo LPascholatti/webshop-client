@@ -2,6 +2,7 @@ import request from 'superagent'
 
 export const PRODUCTS_FETCHED = 'PRODUCTS_FETCHED'
 export const NEW_PRODUCT = 'NEW_PRODUCT'
+export const JWT = 'JWT'
 
 const baseUrl = 'http://localhost:4000'
 
@@ -14,6 +15,12 @@ const newProduct = payload => ({
   type: NEW_PRODUCT,
   payload
 })
+
+function jwt (data) {
+  return {
+    type: JWT,
+    payload: data  }
+}
 
 export const loadProducts = () => (dispatch, getState) => {
   // when the state already contains products, we don't fetch them again
@@ -32,13 +39,30 @@ export const loadProducts = () => (dispatch, getState) => {
   }
 }
 
-export const createProduct = data => dispatch => {
+export const createProduct = data => (dispatch , getState) => {
+  const state = getState()
+  const { user } = state
+  
   request
   .post(`${baseUrl}/products`)
+  .set('Authorization', `Bearer ${user}`)
   .send(data)
   .then(response =>{
     const action = newProduct(response.body)
 
+    dispatch(action)
+  })
+  .catch(console.error)
+}
+
+export const login = (email, password) => dispatch => {
+  request
+  .post(`${baseUrl}/login`)
+  .send({
+    email, password
+  })
+  .then(response => {
+    const action = jwt(response.body.jwt)
     dispatch(action)
   })
   .catch(console.error)

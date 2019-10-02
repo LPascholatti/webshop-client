@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CreateProductContainer from './CreateProductContainer'
+import LoginFormContainer from './LoginFormContainer'
 
 export default class ProductList extends Component {
 
@@ -37,6 +38,8 @@ export default class ProductList extends Component {
             <ul>{products.map(this.renderProducts)} </ul>
           }
         </div>
+        <LoginFormContainer />
+        <br/>
         <CreateProductContainer />
       </div>
     )

@@ -8,11 +8,12 @@ export default class ProductList extends Component {
     const { name, imageURL, price, description, email, sellerAddress } = products
     console.log("URL", imageURL)
 
-    return <li key={name}>{name + ":"}<br />
+    return <li key={name}><div tag="productTitle">{name + ":"}</div><br />
         {"Description: " + description} <br />
         {"Price: " + price + " euros"} <br />
         {"Seller e-mail: " + email} <br />
         {"Seller address: " + sellerAddress} <br />
+        <br/>
       <img alt={name} src={imageURL}/>
     </li>
 

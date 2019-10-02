@@ -29,3 +29,16 @@ img {
 ul {
   list-style-type: none;
 }
+
+.products-list {
+  padding: 3rem;
+}
+
+.products-container {
+  padding: 2rem;
+}
+
+#productTitle {
+  font-weight: bold;
+  font-size: 2rem;
+}

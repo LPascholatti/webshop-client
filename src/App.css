@@ -2,19 +2,15 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 1.5rem;
+  color: rgb(189, 189, 189);
 }
 
 .App-link {
@@ -38,7 +34,7 @@ ul {
   padding: 2rem;
 }
 
-#productTitle {
+.productTitle.p {
   font-weight: bold;
   font-size: 2rem;
 }
@@ -47,4 +43,15 @@ ul {
   padding: 3rem;
   margin: 2rem;
   border: solid;
+}
+
+footer {
+  background-color: #282c34;
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: rgb(189, 189, 189);
 }

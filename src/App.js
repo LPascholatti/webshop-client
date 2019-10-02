@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom'
 import ProductsListContainer from './components/ProductsListContainer'
 import { Provider } from 'react-redux'
 import store from './store'
+import ProductDetailsContainer from './components/ProductDetailsContainer'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <body>
           <main>
             <Route path="/" exact component={ProductsListContainer} />
+            <Route path="/products/:id" component={ProductDetailsContainer} />
           </main>
           <footer className="footer">
             <p>Powered by Lucas</p>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CreateProductContainer from './CreateProductContainer'
 import LoginFormContainer from './LoginFormContainer'
+import { Link } from 'react-router-dom'
 
 export default class ProductList extends Component {
 
@@ -9,7 +10,7 @@ export default class ProductList extends Component {
     const { name, id, imageURL, price, description, email, sellerAddress } = products
     console.log("URL", imageURL)
 
-    return <li key={name}><div className="productTitle"><p style={{fontWeight: "bold"}}>ID: {id} <br/><br/> {name}</p></div><br />
+    return <li key={name}><div className="productTitle"><p style={{fontWeight: "bold"}}>ID: {id} <br/><br/><Link to={`products/${id}`}>{name}</Link></p></div><br />
         {"Description: " + description} <br />
         {"Price: " + price + " euros"} <br />
         {"Seller e-mail: " + email} <br />

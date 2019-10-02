@@ -8,20 +8,22 @@ export default function ProductDetails(props) {
 
   return (
     <div className="productDetails">
-      <h1>{name + " " + id}</h1>
+      <h1>{name}</h1>
       <br />
-      <i>{price}</i>
-      <p>
+      <h3>Price: only {price} euros </h3>
+      <p> Description: 
         {!description && "Loading..."}
-        {description}
+        {" " + description}
+        <br />
         <br />
         <img alt={name} src={imageURL} />
         <br />
+        <br />
         By seller:
-        {email + " " + sellerAddress}
-        <p>
-          {}
-        </p>
+        <br/>
+        <p>E-mail: {email}</p>
+        <p> Seller Address: {sellerAddress}</p>
+        <p> Product's ID:{" " + id}</p>
       </p>
     </div>
   )

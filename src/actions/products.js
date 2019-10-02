@@ -4,6 +4,7 @@ export const PRODUCTS_FETCHED = 'PRODUCTS_FETCHED'
 export const PRODUCT_FETCHED = 'PRODUCT_FETCHED'
 export const NEW_PRODUCT = 'NEW_PRODUCT'
 export const JWT = 'JWT'
+export const NEW_USER = 'NEW_USER'
 
 const baseUrl = 'http://localhost:4000'
 
@@ -22,10 +23,18 @@ const newProduct = payload => ({
   payload
 })
 
-function jwt (data) {
+function jwt(data) {
   return {
     type: JWT,
-    payload: data  }
+    payload: data
+  }
+}
+
+function newUser(email, password) {
+  return {
+    type: NEW_USER,
+    payload: (email, password)
+  }
 }
 
 export const loadProducts = () => (dispatch, getState) => {
@@ -53,31 +62,41 @@ export const loadProduct = (id) => (dispatch) => {
     })
 }
 
-export const createProduct = data => (dispatch , getState) => {
+export const createProduct = data => (dispatch, getState) => {
   const state = getState()
   const { user } = state
-  
-  request
-  .post(`${baseUrl}/products`)
-  .set('Authorization', `Bearer ${user}`)
-  .send(data)
-  .then(response =>{
-    const action = newProduct(response.body)
 
-    dispatch(action)
-  })
-  .catch(console.error)
+  request
+    .post(`${baseUrl}/products`)
+    .set('Authorization', `Bearer ${user}`)
+    .send(data)
+    .then(response => {
+      const action = newProduct(response.body)
+
+      dispatch(action)
+    })
+    .catch(console.error)
+}
+
+export const signUp = (email, password) => (dispatch) => {
+  request
+    .post(`${baseUrl}/user`)
+    .send(email, password)
+    .then(response => {
+      const action = newUser(response.body)
+      dispatch(action)
+    })
 }
 
 export const login = (email, password) => dispatch => {
   request
-  .post(`${baseUrl}/login`)
-  .send({
-    email, password
-  })
-  .then(response => {
-    const action = jwt(response.body.jwt)
-    dispatch(action)
-  })
-  .catch(console.error)
+    .post(`${baseUrl}/login`)
+    .send({
+      email, password
+    })
+    .then(response => {
+      const action = jwt(response.body.jwt)
+      dispatch(action)
+    })
+    .catch(console.error)
 }

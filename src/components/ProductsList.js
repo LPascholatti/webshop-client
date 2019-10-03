@@ -11,13 +11,14 @@ export default class ProductList extends Component {
     const { name, id, imageURL, price, description, email, sellerAddress } = products
     console.log("URL", imageURL)
 
-    return <li key={name}><div className="productTitle"><p style={{fontWeight: "bold"}}>ID: {id} <br/><br/><Link to={`products/${id}`}>{name}</Link></p></div><br />
-        {"Description: " + description} <br />
-        {"Price: " + price + " euros"} <br />
-        {"Seller e-mail: " + email} <br />
-        {"Seller address: " + sellerAddress} <br />
-        <br/>
-      <img alt={name} src={imageURL}/>
+    return <li key={name}><div className="productTitle"><p style={{ fontWeight: "bold" }}>ID: {id}
+      <br /><br /><Link to={`products/${id}`}>{name}</Link></p></div><br />
+      {"Description: " + description} <br />
+      {"Price: " + price + " euros"} <br />
+      {"Seller e-mail: " + email} <br />
+      {"Seller address: " + sellerAddress} <br />
+      <br />
+      <img alt={name} src={imageURL} />
     </li>
 
   }
@@ -33,7 +34,7 @@ export default class ProductList extends Component {
     return (
       <div className='products-container'>
         <div className="signUp">
-          <SignUpContainer/>
+          <SignUpContainer />
         </div>
         <div className='products-list'>
           <h2>Products</h2>
@@ -44,7 +45,7 @@ export default class ProductList extends Component {
           }
         </div>
         <LoginFormContainer />
-        <br/>
+        <br />
         <CreateProductContainer />
       </div>
     )

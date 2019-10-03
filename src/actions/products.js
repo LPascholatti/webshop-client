@@ -79,11 +79,13 @@ export const createProduct = data => (dispatch, getState) => {
 }
 
 export const signUp = (email, password) => (dispatch) => {
+  console.log("email, password in Signup", email, password)
   request
     .post(`${baseUrl}/user`)
-    .send(email, password)
+    .send({email, password})
     .then(response => {
       const action = newUser(response.body)
+      console.log("action in signup", action)
       dispatch(action)
     })
 }

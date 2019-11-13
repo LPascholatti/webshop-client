@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 import ProductDetailsContainer from "./components/ProductDetailsContainer";
 import SignUpContainer from "./components/SignUpContainer";
+import LoginFormContainer from "./components/LoginFormContainer";
 
 function App() {
   return (
@@ -18,7 +19,10 @@ function App() {
         <body>
           <main className="App-body">
             <Link to="/signup">Sign Up</Link>
+            <br/>
+            <Link to='/login'>Log In</Link>
             <Route path="/signup" component={SignUpContainer} />
+            <Route path="/login" component={LoginFormContainer} />
             <Route path="/" exact component={ProductsListContainer} />
             <Route path="/products/:id" component={ProductDetailsContainer} />
           </main>

@@ -41,8 +41,6 @@ export default class ProductList extends Component {
             <ul>{products.map(this.renderProducts)} </ul>
           }
         </div>
-        <LoginFormContainer />
-        <br />
         <CreateProductContainer />
       </div>
     )

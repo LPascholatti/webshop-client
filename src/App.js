@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import { Route } from 'react-router-dom'
-import Gif from './components/Gif'
 import ProductsListContainer from './components/ProductsListContainer'
 import { Provider } from 'react-redux'
 import store from './store'
@@ -23,7 +22,6 @@ function App() {
           </main>
           <footer className="footer">
             <p>Powered by Lucas</p>
-            <Gif />
           </footer>
         </body>
       </div>

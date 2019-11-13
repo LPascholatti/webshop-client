@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from "react-router-dom";
 
 export default function LoginForm(props) {
   const { onSubmit, onChange, values } = props;
@@ -31,6 +32,8 @@ export default function LoginForm(props) {
 
         <input type="submit"/>
       </form>
+      <br/>
+      <Link to='/'>Return</Link>
     </div>
   )
 }

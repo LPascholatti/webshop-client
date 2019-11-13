@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { login } from '../actions'
 
 class LoginFormContainer extends React.Component {
-  state = { email: '', password: '' }
+  state = { email: '', password: '', token: this.state }
 
   onSubmit = (event) => {
     event.preventDefault()
@@ -26,8 +26,13 @@ class LoginFormContainer extends React.Component {
       onSubmit={this.onSubmit}
       onChange={this.onChange}
       values={this.state}
+      token={this.props.token}
     />
   }
 }
 
-export default connect(null, { login })(LoginFormContainer)
+const mapStateToProps = state => ({
+  token: state.user,
+})
+
+export default connect(mapStateToProps, { login })(LoginFormContainer)

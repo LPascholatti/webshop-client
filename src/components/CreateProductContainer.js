@@ -7,11 +7,12 @@ class CreateProductContainer extends React.Component {
   state = {
     name: '',
     imageURL: '',
-    id: '',
+    id: Math.floor(Math.random() * 9999),
     description: '',
     price: '',
     email: '',
-    sellerAddress: ''
+    sellerAddress: '',
+    token: this.state
   }
 
   onChange = (event) => {
@@ -41,8 +42,13 @@ class CreateProductContainer extends React.Component {
       onSubmit={this.onSubmit}
       onChange={this.onChange}
       values={this.state}
+      token={this.props.token}
     />)
   }
 }
 
-export default connect(null, { createProduct })(CreateProductContainer)
+const mapStateToProps = state => ({
+  token: state.user
+})
+
+export default connect(mapStateToProps, { createProduct })(CreateProductContainer)

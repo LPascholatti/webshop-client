@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.App-body {
+  padding: 2rem;
+}
+
+.App-header {
+  padding: 2rem;
+}
+
 img {
   max-width: 800px;
   max-height: 600px;

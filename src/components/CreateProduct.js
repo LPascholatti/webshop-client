@@ -1,21 +1,11 @@
 import React from 'react'
 
 export default function CreateProduct(props) {
-  const { onSubmit, onChange, values } = props;
+  const { onSubmit, onChange, values, token } = props;
   return (
-    <div className="create-product-form">
+    token !== "" && <div className="create-product-form">
       <h4>Sell Your Own Product</h4>
       <form onSubmit={onSubmit}>
-        <label>
-          Product ID:
-          <input
-            type="number"
-            name="id"
-            onChange={onChange}
-            value={values.id}
-            placeholder="ID"
-          />
-        </label>
         <br />
         <label>
           Add the Product's Name:

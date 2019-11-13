@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import CreateProductContainer from './CreateProductContainer'
 import LoginFormContainer from './LoginFormContainer'
 import { Link } from 'react-router-dom'
-import SignUpContainer from './SignUpContainer'
 
 export default class ProductList extends Component {
 
@@ -23,8 +22,6 @@ export default class ProductList extends Component {
 
   }
 
-  /* <Link to={`products/${id}`}></Link> */
-
   render() {
 
     console.log('this.props test', this.props)
@@ -34,10 +31,10 @@ export default class ProductList extends Component {
     return (
       <div className='products-container'>
         <div className="signUp">
-          <SignUpContainer />
         </div>
         <div className='products-list'>
           <h2>Products</h2>
+          <p>Below you will find a list of products being sold in our database</p>
           {!products && 'Loading...'}
           {
             products &&

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import CreateProductContainer from './CreateProductContainer'
-import LoginFormContainer from './LoginFormContainer'
 import { Link } from 'react-router-dom'
 
 export default class ProductList extends Component {

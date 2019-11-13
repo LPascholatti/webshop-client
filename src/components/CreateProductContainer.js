@@ -7,7 +7,7 @@ class CreateProductContainer extends React.Component {
   state = {
     name: '',
     imageURL: '',
-    id: '',
+    id: Math.floor(Math.random() * 9999),
     description: '',
     price: '',
     email: '',

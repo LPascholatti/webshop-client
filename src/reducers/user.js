@@ -1,4 +1,4 @@
-import { JWT, NEW_USER } from '../actions/products'
+import { JWT, NEW_USER } from '../actions'
 
 export default function (state = '', action = {}) {
   switch (action.type) {

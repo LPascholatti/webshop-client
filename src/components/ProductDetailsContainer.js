@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import ProductDetails from './ProductDetails'
-import { loadProduct } from '../actions/products'
+import { loadProduct } from '../actions'
 
 class ProductDetailsContainer extends React.Component {
   componentDidMount() {

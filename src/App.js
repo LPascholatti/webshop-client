@@ -13,7 +13,6 @@ function App() {
       <div className="App">
         <header className="App-header">
           <h1> Buy and Sell App</h1>
-          <img alt='logo' src='https://d1ic4altzx8ueg.cloudfront.net/finder-us/wp-uploads/2018/01/shutter.jpg' />
           <br/>
           <p>Below you will find a list of products being sold in our database</p>
         </header>

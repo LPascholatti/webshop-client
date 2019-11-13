@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { createProduct } from '../actions/products'
+import { createProduct } from '../actions'
 import CreateProduct from './CreateProduct'
 
 class CreateProductContainer extends React.Component {

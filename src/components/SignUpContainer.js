@@ -1,7 +1,7 @@
 import React from 'react'
 import SignUp from './SignUp'
 import { connect } from 'react-redux'
-import { signUp } from '../actions/products'
+import { signUp } from '../actions'
 
 class SignUpContainer extends React.Component {
   state = { email: '', password: '' }

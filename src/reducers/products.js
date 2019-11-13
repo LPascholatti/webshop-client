@@ -1,4 +1,4 @@
-import {PRODUCTS_FETCHED, NEW_PRODUCT} from '../actions/products'
+import {PRODUCTS_FETCHED, NEW_PRODUCT} from '../actions'
 
 const reducer = (state = [], action) => {
   switch(action.type) {

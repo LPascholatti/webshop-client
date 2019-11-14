@@ -7,14 +7,15 @@ import store from "./store";
 import ProductDetailsContainer from "./components/ProductDetailsContainer";
 import SignUpContainer from "./components/SignUpContainer";
 import LoginFormContainer from "./components/LoginFormContainer";
+import 'typeface-roboto';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
     <Provider store={store}>
       <div className="App">
         <header className="App-header">
-          <h1> Buy and Sell App</h1>
-          <hr />
+          <NavBar/>
         </header>
         <body>
           <main className="App-body">

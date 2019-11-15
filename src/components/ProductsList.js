@@ -6,18 +6,17 @@ export default class ProductList extends Component {
 
   renderProducts(products) {
     console.log('products test:', products)
-    const { name, id, imageURL, price, description, email, sellerAddress } = products
+    const { name, id, imageURL, price } = products
     console.log("URL", imageURL)
 
-    return <li key={name}><div className="productTitle"><p style={{ fontWeight: "bold" }}>ID: {id}
-      <br /><br /><Link to={`products/${id}`}>{name}</Link></p></div><br />
-      {"Description: " + description} <br />
-      {"Price: " + price + " euros"} <br />
-      {"Seller e-mail: " + email} <br />
-      {"Seller address: " + sellerAddress} <br />
-      <br />
+    return <div className="productsRender">
+      <ul><li key={name}>
+      <Link to={`products/${id}`}><h2>{name}</h2></Link>
+      <h2>{`${price}€`}</h2>
       <img alt={name} src={imageURL} />
-    </li>
+      <br/>
+    </li></ul>
+    </div>
 
   }
 
@@ -30,8 +29,6 @@ export default class ProductList extends Component {
     return (
       <div className='products-container'>
         <div className="signUp">
-        </div>
-        <div className='products-list'>
           <h2>Products</h2>
           <p>Below you will find a list of products being sold in our database</p>
           {!products && 'Loading...'}

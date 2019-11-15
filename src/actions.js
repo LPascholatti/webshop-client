@@ -5,6 +5,9 @@ export const PRODUCT_FETCHED = 'PRODUCT_FETCHED'
 export const NEW_PRODUCT = 'NEW_PRODUCT'
 export const JWT = 'JWT'
 export const NEW_USER = 'NEW_USER'
+export const LOGGED_USER = 'LOGGED_USER'
+export const LOGGED_ADDRESS = 'LOGGED_ADDRESS'
+export const LOGGED_EMAIL = 'LOGGED_EMAIL'
 
 const baseUrl = 'http://localhost:4000'
 
@@ -36,6 +39,21 @@ function newUser(data) {
     payload: data
   }
 }
+
+const userLogged = username => ({
+  type: LOGGED_USER,
+  payload: username
+})
+
+const addressLogged = address => ({
+  type: LOGGED_ADDRESS,
+  payload: address
+})
+
+const emailLogged = email => ({
+  type: LOGGED_EMAIL,
+  payload: email
+})
 
 export const loadProducts = () => (dispatch, getState) => {
   // when the state already contains products, we don't fetch them again
@@ -78,11 +96,11 @@ export const createProduct = data => (dispatch, getState) => {
     .catch(console.error)
 }
 
-export const signUp = (email, password) => (dispatch) => {
-  console.log("email, password in Signup", email, password)
+export const signUp = (email, password, address, username) => (dispatch) => {
+  console.log("email, password in Signup", email, password, address, username)
   request
     .post(`${baseUrl}/user`)
-    .send({email, password})
+    .send({email, password, address, username})
     .then(response => {
       const action = newUser(response.body)
       console.log("action in signup", action)
@@ -98,7 +116,14 @@ export const login = (email, password) => dispatch => {
     })
     .then(response => {
       const action = jwt(response.body.jwt)
+      const action2 = userLogged(response.body.username)
+      const action3 = addressLogged(response.body.address)
+      const action4 = emailLogged(response.body.email)
+      console.log('VALUES LOGGED:', response.body)
       dispatch(action)
+      dispatch(action2)
+      dispatch(action3)
+      dispatch(action4)
     })
     .catch(console.error)
 }

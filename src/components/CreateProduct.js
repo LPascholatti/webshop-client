@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function CreateProduct(props) {
   const { onSubmit, onChange, values, token } = props;
+  console.log("VALUES CREATE PRODUCT", values)
   return (
     token !== "" && <div className="create-product-form">
       <h4>Sell Your Own Product</h4>
@@ -51,27 +52,6 @@ export default function CreateProduct(props) {
           />
         </label>
         <br />
-        <label>
-          What is the seller's e-mail address?
-          <input
-            type="text"
-            name="email"
-            onChange={onChange}
-            value={values.email}
-            placeholder="E-mail Address"
-          />
-        </label>
-        <br />
-        <label>
-          What is the seller's address?
-          <input
-            type="text"
-            name="sellerAddress"
-            onChange={onChange}
-            value={values.sellerAddress}
-            placeholder="Seller Address"
-          />
-        </label>
         <br /><br />
         <input type="submit" />
       </form>

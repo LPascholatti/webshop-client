@@ -38,3 +38,7 @@
   max-width: 800px;
   max-height: 600px;
 }
+
+.commentsList li {
+  list-style-type: none;
+}

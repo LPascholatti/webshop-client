@@ -29,6 +29,7 @@ export default function ProductDetails(props) {
       </p>
       <CommentsListContainer/>
       <CreateCommentContainer/>
+      <br/>
       <button><Link to={'/'}>Return</Link></button>
     </div>
   )

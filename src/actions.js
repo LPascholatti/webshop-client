@@ -8,6 +8,7 @@ export const NEW_USER = 'NEW_USER'
 export const LOGGED_USER = 'LOGGED_USER'
 export const LOGGED_ADDRESS = 'LOGGED_ADDRESS'
 export const LOGGED_EMAIL = 'LOGGED_EMAIL'
+export const COMMENTS_FETCHED = 'COMMENTS_FETCHED'
 
 const baseUrl = 'http://localhost:4000'
 
@@ -19,6 +20,11 @@ const productsFetched = payload => ({
 const productFetched = payload => ({
   type: PRODUCT_FETCHED,
   payload
+})
+
+const commentsFetched = comments => ({
+  type: COMMENTS_FETCHED,
+  payload: comments
 })
 
 const newProduct = payload => ({
@@ -78,6 +84,20 @@ export const loadProduct = (id) => (dispatch) => {
       dispatch(productFetched(response.body))
       // .catch(console.error)
     })
+}
+
+export const loadComments = () => (dispatch, getState) => {
+  const state = getState()
+  const { comments } = state
+
+  if (!comments.length) {
+    request(`${baseUrl}/comment`)
+    .then(response => {
+      const action = commentsFetched(response.body)
+      dispatch(action)
+    })
+    .catch(console.error)
+  }
 }
 
 export const createProduct = data => (dispatch, getState) => {

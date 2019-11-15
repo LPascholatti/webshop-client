@@ -10,16 +10,16 @@
   padding: 2rem;
 }
 
-img {
+.products-container img {
   max-width: 800px;
   max-height: 600px;
 }
 
-ul {
+.products-container ul {
   list-style-type: none;
 }
 
-.products-list {
+.products-container {
   padding: 3rem;
 }
 

@@ -9,6 +9,7 @@ export const LOGGED_USER = 'LOGGED_USER'
 export const LOGGED_ADDRESS = 'LOGGED_ADDRESS'
 export const LOGGED_EMAIL = 'LOGGED_EMAIL'
 export const COMMENTS_FETCHED = 'COMMENTS_FETCHED'
+export const COMMENT_CREATE = 'COMMENT_CREATE'
 
 const baseUrl = 'http://localhost:4000'
 
@@ -25,6 +26,11 @@ const productFetched = payload => ({
 const commentsFetched = comments => ({
   type: COMMENTS_FETCHED,
   payload: comments
+})
+
+const commentCreate = comment => ({
+  type: COMMENT_CREATE,
+  payload: comment
 })
 
 const newProduct = payload => ({
@@ -114,6 +120,21 @@ export const createProduct = data => (dispatch, getState) => {
       dispatch(action)
     })
     .catch(console.error)
+}
+
+export const addComment = data => (dispatch, getState) => {
+  const state = getState()
+  const { user } = state
+  console.log("USER in addTicket:", user)
+  request
+  .post(`${baseUrl}/comment`)
+  .set('Authorization', `Bearer ${user}`)
+  .send(data)
+  .then(response => {
+    const action = commentCreate(response.body)
+    dispatch(action)
+  })
+  .catch(console.error)
 }
 
 export const signUp = (email, password, address, username) => (dispatch) => {

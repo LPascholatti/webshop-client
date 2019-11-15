@@ -23,7 +23,7 @@ export default function SignUp(props) {
         <label>
           Password:
           <input
-            type="text"
+            type="password"
             name="password"
             onChange={onChange}
             value={values.password}

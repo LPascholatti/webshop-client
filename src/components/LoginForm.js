@@ -23,7 +23,7 @@ export default function LoginForm(props) {
           Password:
 
           <input
-          type="text"
+          type="password"
           name="password"
           onChange={onChange}
           value={values.password}

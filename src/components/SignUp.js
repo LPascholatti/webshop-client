@@ -31,6 +31,28 @@ export default function SignUp(props) {
           />
         </label>
 
+        <label>
+          Username:
+          <input
+            type="text"
+            name="username"
+            onChange={onChange}
+            value={values.username}
+            placeholder="username"
+          />
+        </label>
+
+        <label>
+          Address:
+          <input
+            type="text"
+            name="address"
+            onChange={onChange}
+            value={values.address}
+            placeholder="address"
+          />
+        </label>
+
         <input type="submit" />
       </form>
       <br/>

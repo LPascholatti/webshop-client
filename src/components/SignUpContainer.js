@@ -4,14 +4,16 @@ import { connect } from 'react-redux'
 import { signUp } from '../actions'
 
 class SignUpContainer extends React.Component {
-  state = { email: '', password: '' }
+  state = { email: '', password: '', address: '', username: '' }
 
   onSubmit = (event) => {
     event.preventDefault()
-    this.props.signUp(this.state.email, this.state.password)
+    this.props.signUp(this.state.email, this.state.password, this.state.address, this.state.username)
     this.setState({
       email: '',
-      password: ''
+      password: '',
+      address: '',
+      username: ''
     })
   }
 

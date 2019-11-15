@@ -10,9 +10,10 @@ class CreateProductContainer extends React.Component {
     id: Math.floor(Math.random() * 9999),
     description: '',
     price: '',
-    email: '',
-    sellerAddress: '',
-    token: this.state
+    email: this.props.email,
+    sellerAddress: this.props.address,
+    token: this.state,
+    // username: this.state
   }
 
   onChange = (event) => {
@@ -32,8 +33,6 @@ class CreateProductContainer extends React.Component {
       id: '',
       description: '',
       price: '',
-      email: '',
-      sellerAddress: ''
     })
   }
 
@@ -48,7 +47,10 @@ class CreateProductContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  token: state.user
+  token: state.user,
+  address: state.address,
+  email: state.email,
+  username: state.username
 })
 
 export default connect(mapStateToProps, { createProduct })(CreateProductContainer)

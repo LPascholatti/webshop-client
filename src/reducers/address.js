@@ -1,11 +1,8 @@
-import { JWT, NEW_USER } from '../actions'
+import { LOGGED_ADDRESS } from '../actions'
 
 export default function (state = '', action = {}) {
   switch (action.type) {
-    case JWT: {
-      return action.payload
-    }
-    case NEW_USER: {
+    case LOGGED_ADDRESS: {
       return action.payload
     }
     default: 

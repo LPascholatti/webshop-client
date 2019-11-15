@@ -7,6 +7,7 @@ export const JWT = 'JWT'
 export const NEW_USER = 'NEW_USER'
 export const LOGGED_USER = 'LOGGED_USER'
 export const LOGGED_ADDRESS = 'LOGGED_ADDRESS'
+export const LOGGED_EMAIL = 'LOGGED_EMAIL'
 
 const baseUrl = 'http://localhost:4000'
 
@@ -47,6 +48,11 @@ const userLogged = username => ({
 const addressLogged = address => ({
   type: LOGGED_ADDRESS,
   payload: address
+})
+
+const emailLogged = email => ({
+  type: LOGGED_EMAIL,
+  payload: email
 })
 
 export const loadProducts = () => (dispatch, getState) => {
@@ -112,10 +118,12 @@ export const login = (email, password) => dispatch => {
       const action = jwt(response.body.jwt)
       const action2 = userLogged(response.body.username)
       const action3 = addressLogged(response.body.address)
+      const action4 = emailLogged(response.body.email)
       console.log('VALUES LOGGED:', response.body)
       dispatch(action)
       dispatch(action2)
       dispatch(action3)
+      dispatch(action4)
     })
     .catch(console.error)
 }

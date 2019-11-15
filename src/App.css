@@ -23,17 +23,18 @@
   padding: 3rem;
 }
 
-.products-container {
-  padding: 2rem;
-}
-
-.productTitle.p {
-  font-weight: bold;
-  font-size: 2rem;
-}
-
 .create-product-form {
   padding: 3rem;
-  margin: 2rem;
-  border: solid;
+}
+
+.buttons {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.productDetails img {
+  max-width: 800px;
+  max-height: 600px;
 }

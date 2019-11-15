@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from "react-router-dom";
 
 export default function CreateProduct(props) {
   const { onSubmit, onChange, values, token } = props;
@@ -51,10 +52,9 @@ export default function CreateProduct(props) {
             placeholder="Price"
           />
         </label>
-        <br />
-        <br /><br />
         <input type="submit" />
       </form>
+      <Link to='/'>Return</Link>
     </div>
   )
 }

@@ -1,44 +1,54 @@
-import React, { Component } from 'react'
-import CreateProductContainer from './CreateProductContainer'
-import { Link } from 'react-router-dom'
+import React, { Component } from "react";
+import CreateProductContainer from "./CreateProductContainer";
+import { Route, Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
 
 export default class ProductList extends Component {
-
   renderProducts(products) {
-    console.log('products test:', products)
-    const { name, id, imageURL, price } = products
-    console.log("URL", imageURL)
+    console.log("products test:", products);
+    const { name, id, imageURL, price } = products;
+    console.log("URL", imageURL);
 
-    return <div className="productsRender">
-      <ul><li key={name}>
-      <Link to={`products/${id}`}><h2>{name}</h2></Link>
-      <h2>{`${price}€`}</h2>
-      <img alt={name} src={imageURL} />
-      <br/>
-    </li></ul>
-    </div>
-
+    return (
+      <div className="productsRender">
+        <ul>
+          <li key={name}>
+            <Link to={`products/${id}`}>
+              <h2>{name}</h2>
+            </Link>
+            <h2>{`${price}€`}</h2>
+            <img alt={name} src={imageURL} />
+            <br />
+          </li>
+        </ul>
+      </div>
+    );
   }
 
   render() {
+    console.log("this.props test", this.props);
 
-    console.log('this.props test', this.props)
-
-    const { products } = this.props
+    const { products, token } = this.props;
 
     return (
-      <div className='products-container'>
+      <div className="products-container">
         <div className="signUp">
-          <h2>Products</h2>
-          <p>Below you will find a list of products being sold in our database</p>
-          {!products && 'Loading...'}
-          {
-            products &&
-            <ul>{products.map(this.renderProducts)} </ul>
-          }
+          <h1>Products</h1>
+          <h2>
+            Below you will find a list of products being sold in our database:
+          </h2>
+          {!products && "Loading..."}
+          {products && <ul>{products.map(this.renderProducts)} </ul>}
         </div>
-        <CreateProductContainer />
+        <Route path="/sell" component={CreateProductContainer} />
+        {token !== "" && <div className="button-sell">
+        <Link to="/sell">
+          <Button variant="contained" color="primary">
+            Sell Your Own:
+          </Button>
+        </Link>
+        </div>}
       </div>
-    )
+    );
   }
 }

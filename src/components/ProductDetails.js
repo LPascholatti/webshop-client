@@ -11,11 +11,10 @@ export default function ProductDetails(props) {
     <div className="productDetails">
       <h1>{name}</h1>
       <br />
-      <h3>Price: only {price} euros </h3>
+      <h3>{`Price: only ${price}€ `}</h3>
       <p> Description: 
         {!description && "Loading..."}
         {" " + description}
-        <br />
         <br />
         <img alt={name} src={imageURL} />
         <br />
@@ -27,9 +26,6 @@ export default function ProductDetails(props) {
         <p> Product's ID:{" " + id}</p>
       </p>
       <button><Link to={'/'}>Return</Link></button>
-      <br />
-      <br />
-      <br />
     </div>
   )
 }

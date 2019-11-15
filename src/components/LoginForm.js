@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import ProductsListContainer from './ProductsListContainer';
 
 export default function LoginForm(props) {
   const { onSubmit, onChange, values } = props;
@@ -33,7 +34,8 @@ export default function LoginForm(props) {
         <input type="submit"/>
       </form>
       <br/>
-      <Link to='/'>Return</Link>
+      {/* <Link to='/'>Return</Link> */}
+      <ProductsListContainer/>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import CommentsListContainer from './CommentsListContainer';
+import CreateCommentContainer from './CreateCommentContainer';
 
 export default function ProductDetails(props) {
   console.log('props.event', props.product)
@@ -27,6 +28,7 @@ export default function ProductDetails(props) {
         <p> Product's ID:{" " + id}</p>
       </p>
       <CommentsListContainer/>
+      <CreateCommentContainer/>
       <button><Link to={'/'}>Return</Link></button>
     </div>
   )

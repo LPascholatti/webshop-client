@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import CommentsListContainer from './CommentsListContainer';
 
 export default function ProductDetails(props) {
   console.log('props.event', props.product)
@@ -25,6 +26,7 @@ export default function ProductDetails(props) {
         <p> Seller Address: {sellerAddress}</p>
         <p> Product's ID:{" " + id}</p>
       </p>
+      <CommentsListContainer/>
       <button><Link to={'/'}>Return</Link></button>
     </div>
   )

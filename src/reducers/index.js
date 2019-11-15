@@ -5,6 +5,7 @@ import user from '../reducers/user'
 import username from '../reducers/username'
 import email from '../reducers/email'
 import address from '../reducers/address'
+import comments from '../reducers/comments'
 
 export default combineReducers({
   products,
@@ -12,5 +13,6 @@ export default combineReducers({
   product,
   username,
   email,
-  address
+  address,
+  comments
 })

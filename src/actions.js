@@ -10,6 +10,7 @@ export const LOGGED_ADDRESS = 'LOGGED_ADDRESS'
 export const LOGGED_EMAIL = 'LOGGED_EMAIL'
 export const COMMENTS_FETCHED = 'COMMENTS_FETCHED'
 export const COMMENT_CREATE = 'COMMENT_CREATE'
+export const UPDATE_PRODUCT = 'UPDATE_PRODUCT'
 
 // const baseUrl = 'https://guarded-citadel-28026.herokuapp.com/'
 const baseUrl = 'http://localhost:4000'
@@ -21,6 +22,11 @@ const productsFetched = payload => ({
 
 const productFetched = payload => ({
   type: PRODUCT_FETCHED,
+  payload
+})
+
+const updateProduct = payload => ({
+  type: UPDATE_PRODUCT,
   payload
 })
 
@@ -168,4 +174,15 @@ export const login = (email, password) => dispatch => {
       dispatch(action4)
     })
     .catch(console.error)
+}
+
+export const putRequestProduct = (data, id) => dispatch => {
+  request
+  .put(`${baseUrl}/products`)
+  .send(data)
+  .then(response => {
+    const action = updateProduct(response.body)
+    dispatch(action)
+  })
+  .catch(console.error)
 }

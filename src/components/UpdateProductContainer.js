@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { putRequestProduct } from '../actions';
+import { putRequestProduct, deleteProduct } from '../actions';
 import UpdateProductForm from './UpdateProductForm';
 
 class UpdateProductContainer extends Component {
@@ -24,6 +24,10 @@ class UpdateProductContainer extends Component {
     })
   }
 
+  onDelete = () => {
+    this.props.deleteProduct(this.props.product.id)
+  }
+
   onSubmit = (event) => {
     event.preventDefault()
 
@@ -43,6 +47,7 @@ class UpdateProductContainer extends Component {
     return (<UpdateProductForm
     onSubmit={this.onSubmit}
     onChange={this.onChange}
+    onDelete={this.onDelete}
     values={this.state}
     username={this.props.username}
     product={this.props.product}
@@ -58,4 +63,4 @@ const mapStateToProps = state => ({
   product: state.product
 })
 
-export default connect(mapStateToProps, {putRequestProduct})(UpdateProductContainer)
+export default connect(mapStateToProps, {putRequestProduct, deleteProduct})(UpdateProductContainer)

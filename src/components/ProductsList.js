@@ -28,12 +28,13 @@ export default class ProductList extends Component {
   render() {
     console.log("this.props test", this.props);
 
-    const { products, token } = this.props;
+    const { products, token, username } = this.props;
 
     return (
       <div className="products-container">
-        <div className="signUp">
+        <div className="products-container-body">
           <h1>Products</h1>
+          <h3>{`Hello ${username}! Welcome to Buy & Sell App!`}</h3>
           <h2>
             Below you will find a list of products being sold in our database:
           </h2>

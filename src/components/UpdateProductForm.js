@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function UpdateProductForm(props) {
-  const { onSubmit, onChange, values, username, product } = props;
+  const { onSubmit, onDelete, onChange, values, username, product } = props;
   console.log("VALUES IN UPDATE PRODUCT:", values);
 
   return (
@@ -65,6 +66,11 @@ export default function UpdateProductForm(props) {
           </label>
           <input type="submit" />
         </form>
+        <br/>
+        <br/>
+        <Link to='/'>
+        <button onClick={onDelete}>Product Sold (Delete)</button>
+        </Link>
       </div>
     )
   );

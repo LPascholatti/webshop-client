@@ -11,6 +11,7 @@ export const LOGGED_EMAIL = 'LOGGED_EMAIL'
 export const COMMENTS_FETCHED = 'COMMENTS_FETCHED'
 export const COMMENT_CREATE = 'COMMENT_CREATE'
 export const UPDATE_PRODUCT = 'UPDATE_PRODUCT'
+export const DELETE_PRODUCT = 'DELETE_PRODUCT'
 
 // const baseUrl = 'https://guarded-citadel-28026.herokuapp.com/'
 const baseUrl = 'http://localhost:4000'
@@ -28,6 +29,11 @@ const productFetched = payload => ({
 const updateProduct = payload => ({
   type: UPDATE_PRODUCT,
   payload
+})
+
+const deleteProductSuccess = id => ({
+  type: DELETE_PRODUCT,
+  payload: id
 })
 
 const commentsFetched = comments => ({
@@ -178,11 +184,20 @@ export const login = (email, password) => dispatch => {
 
 export const putRequestProduct = (data, id) => dispatch => {
   request
-  .put(`${baseUrl}/products`)
+  .put(`${baseUrl}/products/${id}`)
   .send(data)
   .then(response => {
     const action = updateProduct(response.body)
     dispatch(action)
   })
   .catch(console.error)
+}
+
+export const deleteProduct = (id) => (dispatch) => {
+  request
+    .delete(`${baseUrl}/products/${id}`)
+    .then(response => {
+      console.log("response.body in delete event:", response.body)
+      dispatch(deleteProductSuccess(id))
+    })
 }

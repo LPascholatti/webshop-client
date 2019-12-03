@@ -13,6 +13,7 @@ class CreateProductContainer extends React.Component {
     email: this.props.email,
     sellerAddress: this.props.address,
     token: this.state,
+    externalUrl: ''
     // username: this.state
   }
 
@@ -33,6 +34,7 @@ class CreateProductContainer extends React.Component {
       id: '',
       description: '',
       price: '',
+      externalUrl: ''
     })
   }
 

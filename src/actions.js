@@ -11,7 +11,8 @@ export const LOGGED_EMAIL = 'LOGGED_EMAIL'
 export const COMMENTS_FETCHED = 'COMMENTS_FETCHED'
 export const COMMENT_CREATE = 'COMMENT_CREATE'
 
-const baseUrl = 'https://guarded-citadel-28026.herokuapp.com/'
+// const baseUrl = 'https://guarded-citadel-28026.herokuapp.com/'
+const baseUrl = 'http://localhost:4000'
 
 const productsFetched = payload => ({
   type: PRODUCTS_FETCHED,

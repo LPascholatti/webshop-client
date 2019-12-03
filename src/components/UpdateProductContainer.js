@@ -44,7 +44,8 @@ class UpdateProductContainer extends Component {
     onSubmit={this.onSubmit}
     onChange={this.onChange}
     values={this.state}
-    token={this.props.token}
+    username={this.props.username}
+    product={this.props.product}
     />)
   }
 }

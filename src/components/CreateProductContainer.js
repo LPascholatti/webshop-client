@@ -13,8 +13,8 @@ class CreateProductContainer extends React.Component {
     email: this.props.email,
     sellerAddress: this.props.address,
     token: this.state,
-    externalUrl: ''
-    // username: this.state
+    externalUrl: '',
+    seller: this.props.username
   }
 
   onChange = (event) => {

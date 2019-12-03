@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import CommentsListContainer from './CommentsListContainer';
 import CreateCommentContainer from './CreateCommentContainer';
+import UpdateProductContainer from './UpdateProductContainer';
 
 export default function ProductDetails(props) {
   console.log('props.event', props.product)
@@ -31,6 +32,10 @@ export default function ProductDetails(props) {
       <CreateCommentContainer/>
       <br/>
       <button><Link to={'/'}>Return</Link></button>
+      <br/>
+      <br/>
+      <UpdateProductContainer/>
+      <br/>
     </div>
   )
 }

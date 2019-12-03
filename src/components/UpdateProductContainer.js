@@ -1,13 +1,14 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { createProduct } from '../actions'
-import CreateProduct from './CreateProduct'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { putRequestProduct } from '../actions';
+import UpdateProductForm from './UpdateProductForm';
 
-class CreateProductContainer extends React.Component {
+class UpdateProductContainer extends Component {
+
   state = {
     name: '',
     imageURL: '',
-    id: Math.floor(Math.random() * 9999),
+    id: this.props.product.id,
     description: '',
     price: '',
     email: this.props.email,
@@ -39,11 +40,12 @@ class CreateProductContainer extends React.Component {
   }
 
   render() {
-    return (<CreateProduct
-      onSubmit={this.onSubmit}
-      onChange={this.onChange}
-      values={this.state}
-      token={this.props.token}
+    return (<UpdateProductForm
+    onSubmit={this.onSubmit}
+    onChange={this.onChange}
+    values={this.state}
+    username={this.props.username}
+    product={this.props.product}
     />)
   }
 }
@@ -52,7 +54,8 @@ const mapStateToProps = state => ({
   token: state.user,
   address: state.address,
   email: state.email,
-  username: state.username
+  username: state.username,
+  product: state.product
 })
 
-export default connect(mapStateToProps, { createProduct })(CreateProductContainer)
+export default connect(mapStateToProps, {putRequestProduct})(UpdateProductContainer)

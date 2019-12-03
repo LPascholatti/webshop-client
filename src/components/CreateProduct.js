@@ -52,6 +52,16 @@ export default function CreateProduct(props) {
             placeholder="Price"
           />
         </label>
+        <label>
+          Does this product has an external URL?
+          <input
+            type="string"
+            name="externalUrl"
+            onChange={onChange}
+            value={values.externalUrl}
+            placeholder='ExternalURL'
+          />
+        </label>
         <input type="submit" />
       </form>
       <Link to='/'>Return</Link>

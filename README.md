@@ -4,6 +4,8 @@
 
 Check the repository for more info: https://github.com/LPascholatti/ticket-app-server
 
+Deployed at Netlify: https://brave-benz-bde078.netlify.com/
+
 ## Sign Up
 
 You can sign up to log in and sell new products.

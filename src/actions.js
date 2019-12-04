@@ -13,8 +13,8 @@ export const COMMENT_CREATE = 'COMMENT_CREATE'
 export const UPDATE_PRODUCT = 'UPDATE_PRODUCT'
 export const DELETE_PRODUCT = 'DELETE_PRODUCT'
 
-// const baseUrl = 'https://guarded-citadel-28026.herokuapp.com/'
-const baseUrl = 'http://localhost:4000'
+const baseUrl = 'https://guarded-citadel-28026.herokuapp.com'
+//const baseUrl = 'http://localhost:4000'
 
 const productsFetched = payload => ({
   type: PRODUCTS_FETCHED,

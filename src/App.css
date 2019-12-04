@@ -11,8 +11,11 @@
 }
 
 .products-container img {
-  max-width: 800px;
-  max-height: 600px;
+  width: 36rem;
+  height: 30rem;
+  padding: 1rem;
+  border: solid;
+  margin: 1rem;
 }
 
 .products-container ul {

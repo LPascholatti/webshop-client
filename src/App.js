@@ -10,7 +10,7 @@ import LoginFormContainer from "./components/LoginFormContainer";
 import "typeface-roboto";
 import NavBar from "./components/NavBar";
 import Button from "@material-ui/core/Button";
-import CreateProductContainer from './components/CreateProductContainer'
+import CreateProductContainer from "./components/CreateProductContainer";
 
 function App() {
   return (
@@ -42,7 +42,9 @@ function App() {
           </main>
           <footer className="footer">
             <hr />
-            <p>Powered by Lucas</p>
+            <a href="https://github.com/LPascholatti">
+              <p>Powered by Lucas</p>
+            </a>
           </footer>
         </body>
       </div>

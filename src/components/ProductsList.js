@@ -34,10 +34,10 @@ export default class ProductList extends Component {
       <div className="products-container">
         <div className="products-container-body">
           <h1>Products</h1>
-          <h3>{`Hello ${username}! Welcome to Buy & Sell App!`}</h3>
-          <h2>
+          <h2>{`Hello ${username}! Welcome to Buy & Sell App!`}</h2>
+          <h3>
             Below you will find a list of products being sold in our database:
-          </h2>
+          </h3>
           {!products && "Loading..."}
           {products && <ul>{products.map(this.renderProducts)} </ul>}
         </div>
